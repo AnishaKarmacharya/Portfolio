@@ -1,10 +1,20 @@
-
-
+import React, {useState, useEffect} from "react";
+import "./assets/stylesheets/main.css"
 function App() {
-  return (
-    <div className="App">
+  const [loading, setLoading] = useState(true);
 
-    </div>
+  useEffect(() => {
+    setTimeout(() => {
+      setLoading(false);
+    }, 2000);
+  }, []);
+  return (
+    <>
+     {loading ? <div className="preloader-wrapper absolute"><h1>Aayush</h1></div> : 
+     <div>
+      Main content goes here
+     </div>}
+    </>
   );
 }
 
