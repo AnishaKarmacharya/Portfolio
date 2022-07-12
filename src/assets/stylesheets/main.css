@@ -108,6 +108,55 @@
   box-shadow: 0 -1px 4px rgba(0, 0, 0, 0.15);
 }
 
+.home-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  transition: "all 0.25s ease-in-out";
+  background-color: var(--first-color);
+  color: var(--title-color);
+}
+.home-wrapper .main__info {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: auto;
+  margin-top: auto;
+  margin-bottom: auto;
+  padding-top: 15px;
+  align-self: center;
+  order: 0;
+  flex: 0 auto;
+  grid-auto-columns: 1fr;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto auto;
+}
+.home-wrapper h1 {
+  font-size: 15vw;
+  line-height: 90%;
+  font-weight: 400;
+  text-align: center;
+  font-family: "Amiri", serif;
+}
+.home-wrapper p {
+  font-size: var(--h2-font-size);
+  font-family: "Amiri", serif;
+  font-weight: 400;
+  text-align: center;
+}
+.home-wrapper .home-socials {
+  margin: 0 auto 30px;
+}
+.home-wrapper .home-socials .social_icon {
+  font-size: var(--h2-font-size);
+  padding: 0.55rem;
+  background-color: var(--text-color);
+  border-radius: 20px;
+  margin: 0.5rem;
+  color: var(--first-color);
+}
+
 @font-face {
   font-family: Carlantans;
   src: url("../fonts/Carlantans.otf");
