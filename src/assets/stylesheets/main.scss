@@ -1,4 +1,5 @@
 @use 'preloader';
+@use 'header';
 
 /* FONTS */
 @import url('https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&display=swap');
@@ -12,22 +13,17 @@
     --header-height: 3rem;
 
     /* Colors */
-    /* Change favorite color */
-    --hue-color: 250; /*Purple 250 - Green 142 - Blue 230 - Pink 340*/
 
     /* HSL color mode */
-    --first-color: hsl(var(--hue-color), 69%, 61%);
-    --first-color-second: hsl(var(--hue-color), 69%, 61%);
-    --first-color-alt: hsl(var(--hue-color), 57%, 53%);
-    --first-color-lighter: hsl(var(--hue-color), 92%, 85%);
-    --title-color: hsl(var(--hue-color), 8%, 15%);
-    --text-color: hsl(var(--hue-color), 8%, 45%);
-    --text-color-light: hsl(var(--hue-color), 8%, 65%);
-    --input-color: hsl(var(--hue-color), 70%, 96%);
-    --body-color: hsl(var(--hue-color), 60%, 99%);
-    --container-color: #fff;
-    --scroll-bar-color: hsl(var(--hue-color), 12%, 90%);
-    --scroll-thumb-color: hsl(var(--hue-color), 12%, 80%);
+    --first-color: #2AC171;
+    --first-color-alt: #33FF77;
+    --title-color: #CCFFE9;
+    --text-color: #323338;
+    --text-color-light: #C5C7D0;
+    --input-color: #666666;
+    --body-color: #F5F6F8;
+    --container-color: #F5FFF8;
+
 
     /* Font and typography */
     --body-font: 'Poppins', sans-serif;
@@ -118,23 +114,24 @@ img {
 /* REUSABLE CSS CLASSES */
 .section {
   padding: 2rem 0 4rem;
+  &__title {
+    font-size: var(--h1-font-size);
+    color: var(--title-color);
+  }
+  
+  &__subtitle {
+    display: block;
+    font-size: var(--small-font-size);
+    margin-bottom: var(--mb-3);
+  }
+  
+  &__title, 
+  &__subtitle {
+    text-align: center;
+  }
 }
 
-.section__title {
-  font-size: var(--h1-font-size);
-  color: var(--title-color);
-}
 
-.section__subtitle {
-  display: block;
-  font-size: var(--small-font-size);
-  margin-bottom: var(--mb-3);
-}
-
-.section__title, 
-.section__subtitle {
-  text-align: center;
-}
 
 /* LAYOUT */
 .container {
@@ -154,5 +151,119 @@ img {
   bottom: 0;
   left: 0;
   z-index: var(--z-fixed);
-  background-color: var(--body-color);
+  background-color: var(--first-color);
+}
+
+
+/* MEDIA QUERIES */
+/* For small devices */
+@media screen and (max-width: 400px) {
+  .container{
+    margin-left: var(--mb-1);
+    margin-right: var(--mb-1);
+  }
+  section{
+    padding: 100px 0;
+  }
+  .nav__menu{
+    padding: 2rem .25rem 4rem;
+  }
+  .nav_list {
+    column-gap: 0;
+  }
+  .header-container{
+    position: relative;
+    top: var(--header-height);
+    .header-menu{
+      position: absolute;
+      left: 0;
+      top: 25%;
+      padding-right: 5rem;
+      li{
+        margin: 20px 0;
+        i{
+          color: #626262;
+          font-size: 5vw;
+        }
+      }
+    }
+    #header-text{
+      font-size: 7vw;
+      text-transform: uppercase;
+      text-align: center; 
+    }
+    h1 {
+      font-size: 7vw;
+      text-transform: uppercase;
+      text-align: center;
+  
+    }
+    .Typewriter__cursor{
+      display: none;
+    }
+  }
+}
+
+/* For medium devices */
+@media screen and (min-width: 568px) {
+  .container {
+    margin-left: var(--mb-1);
+    margin-right: var(--mb-1);
+  }
+  section{
+    padding: 200px 0;
+  }
+  .nav__menu{
+    padding: 2rem .25rem 4rem;
+  }
+  .nav_list {
+    column-gap: 0;
+  }
+  .contact__container{
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media screen and (min-width: 768px) {
+  .container {
+    max-width: 1500px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  body {
+    margin: 0;
+  }
+  .header {
+    top: 0;
+    bottom: initial;
+    padding: 0 1rem;
+  }
+
+  .nav{
+    height: calc(var(--header-height) + 1.5rem);
+    &__icon,
+    &__close,
+    &__toggle {
+      display: none;
+    }
+    &__list {
+      display: flex;
+      column-gap: 2rem;
+    }
+    &__menu {
+      margin-left: auto;
+      padding: 4rem 0.25rem;
+    }
+    // .change-theme{
+    //   margin: 0;
+    // }
+  }
+}
+/* For large devices */
+@media screen and (min-width: 1024px){
+  .contact__form{
+    width: 560px;
+  }
+  .contact__inputs{
+    grid-template-columns: repeat(2, 1fr);
+  }
 }

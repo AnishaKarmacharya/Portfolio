@@ -1,5 +1,7 @@
 import React, {useState, useEffect} from "react";
 import "./assets/stylesheets/main.css"
+import { Header } from "./components/header/Header";
+import { Home } from "./components/home/Home";
 function App() {
   const [loading, setLoading] = useState(true);
 
@@ -12,7 +14,8 @@ function App() {
     <>
      {loading ? <div className="preloader-wrapper absolute"><h1>Aayush</h1></div> : 
      <div>
-      Main content goes here
+      <Header />
+      <Home />
      </div>}
     </>
   );
