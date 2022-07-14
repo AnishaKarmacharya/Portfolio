@@ -1,6 +1,7 @@
 @use 'preloader';
 @use 'header';
 @use 'home';
+@use 'contact';
 
 /* FONTS */
 @import url('https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&display=swap');
@@ -132,6 +133,9 @@ img {
   }
 }
 
+section{
+  padding: 200px 0;
+}
 
 
 /* LAYOUT */

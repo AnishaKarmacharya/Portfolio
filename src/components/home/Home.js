@@ -2,7 +2,7 @@ import React from "react";
 
 export const Home = () => {
   return (
-    <section className="home-wrapper absolute">
+    <section className="section-wrapper">
       <div className="main__info">
         <h1>Aayush</h1>
         <p>

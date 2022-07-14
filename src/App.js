@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from "react";
 import "./assets/stylesheets/main.css"
+import { Contact } from "./components/contact/Contact";
 import { Header } from "./components/header/Header";
 import { Home } from "./components/home/Home";
 function App() {
@@ -16,6 +17,7 @@ function App() {
      <div>
       <Header />
       <Home />
+      <Contact />
      </div>}
     </>
   );
